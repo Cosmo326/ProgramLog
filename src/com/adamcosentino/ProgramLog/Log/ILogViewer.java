@@ -1,4 +1,4 @@
-package com.adamcosentino.ProgramLog;
+package com.adamcosentino.ProgramLog.Log;
 
 /**
  * ====================================================
