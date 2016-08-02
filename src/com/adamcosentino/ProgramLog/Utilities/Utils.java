@@ -1,5 +1,7 @@
 package com.adamcosentino.ProgramLog.Utilities;
 
+import java.util.Arrays;
+
 /**
  * ====================================================
  * <p>
@@ -11,5 +13,11 @@ package com.adamcosentino.ProgramLog.Utilities;
  * <p>
  * ====================================================
  */
-public class Utils {
+public abstract class Utils {
+  
+  public static final String repeatChar(char character, int repitions){
+    char[] arr = new char[repitions];
+    Arrays.fill(arr,character);
+    return new String(arr);
+  }
 }

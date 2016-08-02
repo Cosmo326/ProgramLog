@@ -26,7 +26,8 @@ public class Property<T> {
     this.comment = comment;
     
     if(value instanceof Boolean) type = "B";
-    else if (value instanceof Double || value instanceof Integer || value instanceof Float || value instanceof Long) type = "N";
+    else if (value instanceof Integer || value instanceof Byte || value instanceof Long) type = "N";
+    else if (value instanceof Double || value instanceof Float) type = "D";
     else if (value instanceof String || value instanceof Character) type = "S";
   }
   

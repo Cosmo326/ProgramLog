@@ -74,9 +74,7 @@ public class ProgramLog {
   }
   public String getLog(ILogViewer viewer){
     StringBuilder output = new StringBuilder();
-    for(Entry entry : log){
-      if(entry.compareLevel(viewers.get(viewer)) <= 0) output.append(entry.toString() + "\n");
-    }
+    log.forEach(entry -> { if(entry.compareLevel(viewers.get(viewer)) <= 0) output.append(entry.toString() + "\n"); });
     return output.toString();
   }
   
@@ -85,9 +83,7 @@ public class ProgramLog {
   public void broadcast(DisplayLevel level, String message){
     Entry entry = new Entry(level, new Date(), message + "\n");
     log.add(entry);
-    for(ILogViewer viewer : viewers.keySet()){
-      if(entry.compareLevel(viewers.get(viewer)) <= 0) viewer.updateLog(entry.toString());
-    }
+    viewers.keySet().forEach(viewer -> { if(entry.compareLevel(viewers.get(viewer)) <= 0) viewer.updateLog(entry.toString()); });
   }
 
   public void info(String msg){
